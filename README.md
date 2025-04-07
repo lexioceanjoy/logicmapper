@@ -1,8 +1,74 @@
-# HTML Table to JSON Logic Tree Converter and Viewer
+# HTML Table to JSON Logic Tree Project
 
 This project consists of two main components:
-1. A converter tool that transforms nested HTML tables into JSON logic trees
-2. An interactive viewer for exploring and visualizing the generated JSON logic trees
+1. A Python-based converter that transforms HTML tables into JSON logic trees
+2. A React-based viewer for visualizing the JSON logic trees
+
+## Project Structure
+
+```
+.
+├── json-tree-viewer/       # React application for viewing JSON trees
+├── html_to_json_converter.py  # Python script for HTML to JSON conversion
+├── json_validator.py       # JSON validation script
+└── requirements.txt       # Python dependencies
+```
+
+## Quick Start
+
+### Setting up the JSON Tree Viewer (React App)
+
+1. Navigate to the json-tree-viewer directory:
+```bash
+cd json-tree-viewer
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm start
+```
+
+The viewer will be available at http://localhost:3000 (or another port if 3000 is in use).
+
+### Using the HTML to JSON Converter
+
+1. Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the converter:
+```bash
+python3 html_to_json_converter.py input.html output.json
+```
+
+## Available JSON Files
+
+The project includes a sample JSON file in `json-tree-viewer/public/`:
+- `claims_logic.json` - Sample claims adjudication logic
+
+## Troubleshooting
+
+If you encounter issues with the React app:
+1. Make sure you're in the correct directory (`json-tree-viewer`)
+2. Try removing and reinstalling dependencies:
+```bash
+cd json-tree-viewer
+rm -rf node_modules package-lock.json
+npm install
+```
+
+For Python script issues:
+1. Verify Python 3.x is installed
+2. Ensure all dependencies are installed:
+```bash
+pip install -r requirements.txt
+```
 
 ## HTML to JSON Converter
 
@@ -32,44 +98,6 @@ The viewer component is a modern React application that provides an interactive 
 - Modern UI/UX with expandable nodes and smooth animations
 - Automatic loading of JSON files
 - Support for custom file uploads
-
-## Installation
-
-1. Clone this repository
-2. Install Python dependencies for the converter:
-```bash
-pip install -r requirements.txt
-```
-3. Install Node.js dependencies for the viewer:
-```bash
-cd json-tree-viewer
-npm install
-```
-
-## Usage
-
-### Converting HTML to JSON
-
-Basic usage:
-```bash
-python3 html_to_json_converter.py input.html output.json
-```
-
-With root condition and strict validation:
-```bash
-python3 html_to_json_converter.py input.html output.json --root-condition "Check Claim Type" --strict
-```
-
-### Viewing JSON Logic Trees
-
-1. Start the viewer development server:
-```bash
-cd json-tree-viewer
-npm start
-```
-2. Open [http://localhost:3001](http://localhost:3001) in your browser
-3. The viewer will automatically load claims_logic.json if present
-4. You can upload custom JSON files through the UI
 
 ## HTML Table Format
 
@@ -124,26 +152,17 @@ The logic trees follow this structure:
 }
 ```
 
-## Validation
-
-The converter validates:
-- JSON schema compliance
-- Condition format and content
-- Action format and content
-- Logical structure
-- Mutually exclusive fields
-- Required fields
-
 ## Dependencies
 
-### Converter
+### Converter (Python)
 - beautifulsoup4: HTML parsing
 - lxml: Efficient HTML parser
 - jsonschema: JSON validation
 - argparse: Command line argument parsing
 
-### Viewer
-- React 18 with hooks
-- Modern JavaScript
-- CSS-in-JS styling
-- Webpack bundling 
+### Viewer (Node.js)
+- React 18.2.0 with hooks
+- react-dom 18.2.0
+- react-scripts 5.0.1
+- Testing libraries for development
+- Create React App for tooling 
