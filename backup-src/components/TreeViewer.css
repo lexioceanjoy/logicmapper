@@ -1,0 +1,64 @@
+.tree-node {
+  margin-left: 20px;
+  padding: 4px 0;
+}
+
+.tree-content {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tree-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.tree-label {
+  font-family: monospace;
+}
+
+.tree-value {
+  margin-left: 8px;
+}
+
+.tree-value.string { color: #22c55e; }
+.tree-value.number { color: #6366f1; }
+.tree-value.boolean { color: #f59e0b; }
+.tree-value.object { color: #3b82f6; }
+.tree-value.array { color: #3b82f6; }
+.tree-value.null { color: #6b7280; }
+
+.tree-children {
+  margin-left: 28px;
+  border-left: 1px solid #e5e7eb;
+  padding-left: 12px;
+}
+
+.json-uploader {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px dashed #e5e7eb;
+  border-radius: 8px;
+}
+
+.json-uploader input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.json-uploader button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.json-uploader button:hover {
+  background-color: #2563eb;
+} 
